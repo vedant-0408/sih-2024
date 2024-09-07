@@ -30,10 +30,10 @@ const Homepage = () => {
           <li><a href="#">About</a></li>
           <li><a href="#">Contact</a></li>
         </ul>
-        <div className="auth-links">
+        {/* <div className="auth-links">
           <button className="signin-btn" onClick={() => { setSignUp(0); setSignIn(1); }}>Sign In</button>
           <button className="signup-btn" onClick={() => { setSignIn(0); setSignUp(1); }}>Sign Up</button>
-        </div>
+        </div> */}
       </nav>
 
       {/* Main Content */}
@@ -71,8 +71,8 @@ const Homepage = () => {
           </section>
         </div>
         {/* SignIn/SignUp Modals */}
-        {signIn ? <SignUp title={"Sign In"} signIn={signIn} setSignIn={setSignIn} signUp={signUp} setSignUp={setSignUp} /> : null}
-        {signUp ? <SignUp title={"Sign Up"} signIn={signIn} setSignIn={setSignIn} signUp={signUp} setSignUp={setSignUp} /> : null}
+        {/* {signIn ? <SignUp title={"Sign In"} signIn={signIn} setSignIn={setSignIn} signUp={signUp} setSignUp={setSignUp} /> : null}
+        {signUp ? <SignUp title={"Sign Up"} signIn={signIn} setSignIn={setSignIn} signUp={signUp} setSignUp={setSignUp} /> : null} */}
       </div>
       <Footer />
     </div>
