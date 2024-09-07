@@ -1,0 +1,170 @@
+/* Global Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #F5F5F5; /* Light background color */
+    color: #424242; /* Primary text color */
+  }
+  
+  /* Navbar Styles */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(90deg, #229799 0%, #48CFCB 100%); /* Gradient background */
+    padding: 20px;
+    color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .navbar .logo {
+    font-size: 2rem;
+    font-weight: 600;
+    color: white;
+  }
+  
+  .navbar .nav-links {
+    display: flex;
+    list-style-type: none;
+  }
+  
+  .navbar .nav-links li {
+    margin: 0 15px;
+  }
+  
+  .navbar .nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+  }
+  
+  .navbar .auth-links {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .navbar .signin-btn,
+  .navbar .signup-btn {
+    background-color: #FFFFFF; /* White button background */
+    color: #229799; /* Teal text color */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .navbar .signin-btn:hover,
+  .navbar .signup-btn:hover {
+    background-color: #F5F5F5; /* Light gray on hover */
+  }
+  
+  /* Homepage Container */
+  .homepage-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    padding: 30px;
+    background: linear-gradient(180deg, #E3F2FD 0%, #FFFFFF 100%); /* Gradient background */
+    min-height: 80vh;
+    transition: filter 0.3s ease; /* Smooth transition for blur effect */
+  }
+  
+  /* Blur effect when bot is active */
+  .blur-background {
+    filter: blur(5px);
+  }
+  
+  /* Homepage Content */
+  .homepage-content {
+    max-width: 800px;
+    padding: 30px;
+    border-radius: 15px;
+    background-color: #FFFFFF;
+    margin-bottom: 20px;
+  }
+  
+  .homepage-header h1 {
+    color: #229799; /* Teal color for header */
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+  }
+  
+  .homepage-header p {
+    color: #707070; /* Gray color for subtext */
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+  
+  /* Description and List */
+  .homepage-description p {
+    font-size: 1rem;
+    color: #424242; /* Primary text color */
+    margin-bottom: 20px;
+  }
+  
+  .homepage-description ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .homepage-description ul li {
+    font-size: 1rem;
+    color: #424242; /* Primary text color */
+    margin-bottom: 15px;
+  }
+  
+  .homepage-description ul li strong {
+    color: #229799; /* Teal color for important text */
+  }
+  
+  /* Start Bot Button */
+  .start-btn {
+    background-color: #48CFCB; /* Teal button color */
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+    width: 100%;
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .start-btn:hover {
+    background-color: #229799; /* Darker teal on hover */
+  }
+  
+  .start-options {
+    display: flex;
+    flex-direction: row;
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: 0;
+  }
+  
+  .start-options span {
+    padding-right: 7px;
+  }
+  
+  /* Sign In/Sign Up Modals */
+  .signin-btn, .signup-btn {
+    background-color: #48CFCB; /* Teal color for buttons */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .signin-btn:hover, .signup-btn:hover {
+    background-color: #229799; /* Darker teal on hover */
+  }
+  

@@ -1,12 +1,13 @@
-import React from 'react'
-import Bot from './assets/Components/Bot'
+import React from 'react';
+import Homepage from './assets/Components/Homepage'; // Import the HomePage component
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 const App = () => {
   return (
-      <div>
-        <Bot />
-      </div>
-  )
-}
+    <div>
+      <Homepage />
+    </div>
+  );
+};
 
 export default App;

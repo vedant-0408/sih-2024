@@ -10,7 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.6.0",
     "@google/generative-ai": "^0.17.1",
+    "pip": "^0.0.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
