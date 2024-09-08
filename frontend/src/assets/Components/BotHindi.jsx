@@ -1,6 +1,7 @@
-import { useState ,useRef,useEffect} from "react";
+import { useState ,useRef,useEffect , CSSProperties} from "react";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import './Bot.css'; // Ensure the same CSS file is imported
+// import ClipLoader from "react-spinners/ClipLoader";
 
 const BotHindi = ({ isBotStarted, setIsBotStarted , selectedLanguage,setSelectedLanguage}) => {
   const [show, setShow] = useState(false);
@@ -12,7 +13,13 @@ const BotHindi = ({ isBotStarted, setIsBotStarted , selectedLanguage,setSelected
     },
   ]);
   const [isListening, setIsListening] = useState(false); // Track if microphone is on
+  // const [loading, setLoading] = useState(false);
 
+  const override={
+    display: "block",
+    margin: "0 auto",
+    borderColor: "red",
+  };
   const chatboxRef = useRef(null);
 
   useEffect(() => {
@@ -32,6 +39,7 @@ const BotHindi = ({ isBotStarted, setIsBotStarted , selectedLanguage,setSelected
     }
 
     const recognition = new SpeechRecognition();
+    recognition.lang = 'hi-IN';
     recognition.interimResults = true;
     recognition.continuous = false; // Stop listening automatically after a pause
 
@@ -60,6 +68,22 @@ const BotHindi = ({ isBotStarted, setIsBotStarted , selectedLanguage,setSelected
     }
   };
 
+  let tText="";
+
+  const apiCall=(text,translateFrom,translateTo,callback)=>{
+    let apiUrl = `https://api.mymemory.translated.net/get?q=${text}&langpair=${translateFrom}|${translateTo}`;
+        fetch(apiUrl)
+        .then((resp)=>resp.json())
+        .then((data)=>{callback(data.responseData.translatedText);
+        });
+    }
+    
+    function handleCallback(opText){
+        tText=opText;
+    }
+
+
+
   // Function to simulate API call and response generation
   const generateResponse = async (userMessage) => {
     try {
@@ -68,14 +92,18 @@ const BotHindi = ({ isBotStarted, setIsBotStarted , selectedLanguage,setSelected
       const result = await model.generateContent(userMessage);
       const responseText = result.response.text();
 
+      apiCall(responseText,"en-GB","hi-IN",handleCallback);
+      setTimeout(()=>{
+        setMessages((prev) =>
+          prev.filter((msg) => msg.message !== "मैं आपके लिए सर्वोत्तम उत्तर ढूंढ रही हूं...")
+        );
+        setMessages((prev) => [
+          ...prev,
+          { message: tText, className: "incoming" },
+        ]);
+      // setLoading(false);
+      },4000)
       // Remove "typing..." message and add bot's actual response
-      setMessages((prev) =>
-        prev.filter((msg) => msg.message !== "मैं आपके लिए सर्वोत्तम उत्तर ढूंढ रही हूं...")
-      );
-      setMessages((prev) => [
-        ...prev,
-        { message: responseText, className: "incoming" },
-      ]);
     } catch (error) {
       console.error("Error generating response:", error);
     }
@@ -83,6 +111,11 @@ const BotHindi = ({ isBotStarted, setIsBotStarted , selectedLanguage,setSelected
 
   // Function to handle sending and receiving messages
   const handleChat = async () => {
+    apiCall(text,"hi-IN","en-GB",handleCallback);
+    setText(tText);
+    // setLoading(true);
+
+  setTimeout(()=>{
     // Add user's message to the message list
     setMessages((prev) => [...prev, { message: text, className: "outgoing" }]);
 
@@ -104,6 +137,7 @@ if (chatbox) {
     setTimeout(() => {
       generateResponse(userMessage);
     }, 600);
+  },4000)
   };
 
   // Text-to-Speech function for reading each message

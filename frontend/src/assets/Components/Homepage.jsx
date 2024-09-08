@@ -74,7 +74,7 @@ const Homepage = () => {
         {/* {signIn ? <SignUp title={"Sign In"} signIn={signIn} setSignIn={setSignIn} signUp={signUp} setSignUp={setSignUp} /> : null}
         {signUp ? <SignUp title={"Sign Up"} signIn={signIn} setSignIn={setSignIn} signUp={signUp} setSignUp={setSignUp} /> : null} */}
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };
