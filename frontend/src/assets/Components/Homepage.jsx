@@ -4,6 +4,7 @@ import Bot from './Bot'; // Import BotEnglish component
 import './Homepage.css'; // Import external CSS
 import SignUp from './SignUp'; // Import SignUp component
 import Footer from './Footer';
+import bot from '../chat-bot-icon-1-259.webp'
 
 const Homepage = () => {
   const [isBotStarted, setIsBotStarted] = useState(false);
@@ -73,8 +74,12 @@ const Homepage = () => {
         {/* SignIn/SignUp Modals */}
         {/* {signIn ? <SignUp title={"Sign In"} signIn={signIn} setSignIn={setSignIn} signUp={signUp} setSignUp={setSignUp} /> : null}
         {signUp ? <SignUp title={"Sign Up"} signIn={signIn} setSignIn={setSignIn} signUp={signUp} setSignUp={setSignUp} /> : null} */}
+        {/* <span className="homepage-content-boot">
+        </span> */}
+            <img src={bot} alt="hello"></img>
       </div>
-      <Footer />
+      
+      {/* <Footer /> */}
     </div>
   );
 };
