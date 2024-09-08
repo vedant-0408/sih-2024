@@ -1,9 +1,16 @@
 /* Global Styles */
+@font-face {
+  font-family: 'valnica';
+  src: URL('../../../ValencaKids-vmY09.ttf') format('truetype');
+}
 body {
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
-    background-color: #F5F5F5;
+    /* background-color: #F5F5F5; */
+    background-image: url('bg_1.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
     color: #424242; /* Primary text color */
   }
   
@@ -12,18 +19,29 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(90deg, #229799 0%, #48CFCB 100%); /* Gradient background */
-    padding: 20px;
+    background: linear-gradient(90deg, #229799 0%, #48CFCB 100%,1); /* Gradient background */
+    padding: 20px 90px;
     color: white;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
+    background: rgba(55, 64, 186, 0.2);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
   }
   
   .navbar .logo {
-    font-size: 2rem;
+    font-family: valnica;
+    font-size: 2.7rem;
     font-weight: 600;
-    color: white;
+    color: #293f5f;
   }
-  
+  .navbar .logo .logo-img{
+    position: relative;
+    top: 10px;
+    width: 50px;
+  }
   .navbar .nav-links {
     display: flex;
     list-style-type: none;
@@ -37,6 +55,7 @@ body {
     color: white;
     text-decoration: none;
     font-size: 1.2rem;
+    font-weight: 500;
   }
   
   .navbar .auth-links {
@@ -63,15 +82,19 @@ body {
   /* Homepage Container */
   .homepage-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center; /* Center items horizontally */
-    justify-content: center; /* Center items vertically */
+    justify-content: space-around; /* Center items vertically */
     padding: 30px;
-    background: linear-gradient(180deg, #E3F2FD 0%, #FFFFFF 100%); /* Gradient background */
+    background: linear-gradient(180deg, #E3F2FD 0%, #FFFFFF 100%,0); /* Gradient background */
     min-height: 80vh;
     transition: filter 0.3s ease; /* Smooth transition for blur effect */
   }
-  
+  .chat-bot-img-div img{
+    position: relative;
+    top: 40px;
+    width: 400px;
+  }
   /* Blur effect when bot is active */
   .blur-background {
     filter: blur(5px);
@@ -81,13 +104,19 @@ body {
   .homepage-content {
     max-width: 800px;
     padding: 30px;
-    border-radius: 15px;
     background-color: #FFFFFF;
     margin-bottom: 20px;
+    background: rgba( 255, 255, 255, 0.5 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 20px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 ); 
   }
+
   
   .homepage-header h1 {
-    color: #229799; /* Teal color for header */
+    color: #5891DB; /* Teal color for header */
     font-size: 2.5rem;
     margin-bottom: 15px;
   }
@@ -117,12 +146,12 @@ body {
   }
   
   .homepage-description ul li strong {
-    color: #229799; /* Teal color for important text */
+    color: #5891DB; /* Teal color for important text */
   }
   
   /* Start Bot Button */
   .start-btn {
-    background-color: #48CFCB; /* Teal button color */
+    background-color: #5891DB; /* Teal button color */
     color: white;
     border: none;
     padding: 15px 30px;
@@ -138,7 +167,7 @@ body {
   }
   
   .start-btn:hover {
-    background-color: #229799; /* Darker teal on hover */
+    background-color: #426ca3; /* Darker teal on hover */
   }
   
   .start-options {

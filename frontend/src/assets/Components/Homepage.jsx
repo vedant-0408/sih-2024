@@ -4,6 +4,8 @@ import Bot from './Bot'; // Import BotEnglish component
 import './Homepage.css'; // Import external CSS
 import SignUp from './SignUp'; // Import SignUp component
 import Footer from './Footer';
+import bot_img from '../Components/chat-bot-icon.webp';
+import bot_logo from '../Components/chatbot_1.png';
 
 const Homepage = () => {
   const [isBotStarted, setIsBotStarted] = useState(false);
@@ -23,12 +25,15 @@ const Homepage = () => {
     <div>
       {/* Navbar */}
       <nav className="navbar">
-        <div className="logo">ExploreBot</div>
+        <div className="logo">
+          <img className="logo-img"src={bot_logo} alt=""></img>
+         <span>XPlore-B</span>
+         </div>
         <ul className="nav-links">
           <li><a href="#">Home</a></li>
-          <li><a href="#">Features</a></li>
+          {/* <li><a href="#">Features</a></li> */}
           <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
+          {/* <li><a href="#">Contact</a></li> */}
         </ul>
         {/* <div className="auth-links">
           <button className="signin-btn" onClick={() => { setSignUp(0); setSignIn(1); }}>Sign In</button>
@@ -40,7 +45,7 @@ const Homepage = () => {
       <div className="homepage-container">
         <div className="homepage-content">
         <header className={`homepage-header ${isBotStarted ? "blur-background" : ""}`}>
-            <h1>Welcome to ExploreBot!</h1>
+            <h1>Welcome to XPlore-B</h1>
             <p>Your Personalized Guide to College Admissions in Rajasthan</p>
         </header>
 
@@ -54,7 +59,9 @@ const Homepage = () => {
               <li><strong>Explore Courses:</strong> Learn about various courses offered by Rajasthan's leading institutions, from engineering to arts and everything in between.</li>
             </ul>
 
-            {!isBotStarted ? (
+            
+          </section>
+          {!isBotStarted ? (
               <button className="start-btn" onClick={handleStartBot}>
                 Start Asking Now!!
                 <div className='start-options'>
@@ -68,7 +75,9 @@ const Homepage = () => {
                 {selectedLanguage === 'english' ? <Bot isBotStarted={isBotStarted} setIsBotStarted={setIsBotStarted} selectedLanguage={selectedLanguage}  setSelectedLanguage={setSelectedLanguage} /> : <BotHindi isBotStarted={isBotStarted} setIsBotStarted={setIsBotStarted} selectedLanguage={selectedLanguage}  setSelectedLanguage={setSelectedLanguage} />}
               </div>
             )}
-          </section>
+        </div>
+        <div className='chat-bot-img-div'>
+          <img src={bot_img} alt="chatbotimg"></img>
         </div>
         {/* SignIn/SignUp Modals */}
         {/* {signIn ? <SignUp title={"Sign In"} signIn={signIn} setSignIn={setSignIn} signUp={signUp} setSignUp={setSignUp} /> : null}

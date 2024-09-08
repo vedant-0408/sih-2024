@@ -2,15 +2,22 @@
 .bot-container {
   position: absolute; /* Positioning relative to the parent container */
   right: 20.9rem; /* Distance from the right edge of the viewport */
-  bottom: 4rem; /* Distance from the bottom edge of the viewport */
-  width: 100%; /* Full width relative to the viewport */
-  max-width: 56%; /* Maximum width of the chatbot container */
+  /* bottom: 4rem; Distance from the bottom edge of the viewport */
+  top: -0.1rem;
+  left: -0.1rem;
+  width: 101%; /* Full width relative to the viewport */
+  /* max-width: 10px;Maximum width of the chatbot container */
   transform: scale(0); /* Initial scale (hidden) */
   opacity: 0; /* Initial opacity (hidden) */
   transition: transform 0.5s ease, opacity 0.5s ease; /* Smooth transition */
   pointer-events: none; /* Disable pointer events when hidden */
   z-index: 1000; /* Ensure chatbot is on top of other elements */
+  /* display: hidden; */
+  
 }
+/* .homepage-content{
+  visibility: hidden;
+} */
 
 /* Medium devices (tablets) */
 @media (max-width: 768px) {
@@ -52,10 +59,16 @@
   border-radius: 15px;
   overflow: hidden;
   z-index: 1100; /* Ensure chatbot is on top of blur */
+  /* background: rgba( 255, 255, 255, 0.5 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 4px );
+  -webkit-backdrop-filter: blur( 4px );
+  border-radius: 20px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );  */
 }
 
 .chatbot header {
-  background-color: #229799; /* Dark teal */
+  background-color: #5891DB; /* Dark teal */
   padding: 0.5rem;
   text-align: center;
   position: relative;
@@ -93,7 +106,7 @@
 
 .chatbox .chat p {
   max-width: 75%;
-  background-color: #48CFCB; /* Teal */
+  background-color: #5891DB; /* Teal */
   padding: 12px 16px;
   border-radius: 10px;
   color: white;
@@ -162,11 +175,11 @@
   background: none;
   cursor: pointer;
   font-size: 1.4rem;
-  color: #48CFCB;
+  color: #5891DB;
 }
 
 .mic-send button:hover {
-  color: #229799;
+  color: #426ca3;
 }
 
 @media (max-width: 490px) {
@@ -204,11 +217,11 @@
 }
 
 .chatbot header span{
-  background-color: #229799;
+  background-color: #5891DB;
   color:#F5F5F5
 }
 
 .chatbot header button{
-  background-color: #229799;
+  background-color: #5891DB;
   border: none;
 }
