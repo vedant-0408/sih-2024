@@ -9,7 +9,7 @@ import bot_logo from '../Components/chatbot_1.png';
 
 const Homepage = () => {
   const [isBotStarted, setIsBotStarted] = useState(false);
-  const [selectedLanguage, setSelectedLanguage] = useState('hindi'); // Default language is English
+  const [selectedLanguage, setSelectedLanguage] = useState('english'); // Default language is English
   const [signUp, setSignUp] = useState(0);
   const [signIn, setSignIn] = useState(0);
 

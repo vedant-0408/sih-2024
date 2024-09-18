@@ -118,6 +118,7 @@
 .chatbox .outgoing {
   justify-content: flex-end;
   margin-right: 12px;
+  margin-bottom: 10px;
 }
 
 .chatbox .incoming span {

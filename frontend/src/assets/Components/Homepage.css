@@ -81,10 +81,11 @@ body {
   
   /* Homepage Container */
   .homepage-container {
+    margin-left:80px;
     display: flex;
     flex-direction: row;
     align-items: center; /* Center items horizontally */
-    justify-content: space-around; /* Center items vertically */
+    /* Center items vertically */
     padding: 30px;
     background: linear-gradient(180deg, #E3F2FD 0%, #FFFFFF 100%,0); /* Gradient background */
     min-height: 80vh;
@@ -93,7 +94,10 @@ body {
   .chat-bot-img-div img{
     position: relative;
     top: 40px;
-    width: 400px;
+    width: 500px;
+    /* max-width: max-content; */
+    /* margin-right:50px; */
+    margin-left: 80px;
   }
   /* Blur effect when bot is active */
   .blur-background {
@@ -102,7 +106,7 @@ body {
   
   /* Homepage Content */
   .homepage-content {
-    max-width: 800px;
+    max-width: 900px;
     padding: 30px;
     background-color: #FFFFFF;
     margin-bottom: 20px;

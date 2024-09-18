@@ -32,6 +32,7 @@ const BotHindi = ({ isBotStarted, setIsBotStarted , selectedLanguage,setSelected
     }
 
     const recognition = new SpeechRecognition();
+    recognition.lang = 'en-GB';
     recognition.interimResults = true;
     recognition.continuous = false; // Stop listening automatically after a pause
 
